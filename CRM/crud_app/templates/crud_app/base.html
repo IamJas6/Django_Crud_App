@@ -10,11 +10,24 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     </head>
     <body>
+        <!--create navbar here-->
+        {% include 'crud_app/navbar.html' %}
+
         <div class="container">
+            <!--notification messages-->
+
             {% block content %}
             <!-- Your content goes here -->
             {% endblock %}
+
         </div>
+        
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <!-- Footer-->
+        <footer class="py-5 bg-body-tertiary">
+            <div class="container"><p class="m-0 text-center text-blue">Copyright &copy; CRM 2024</p></div>
+        </footer>
+
         
         <script src="{% static 'js/app.js' %}"></script>
         
