@@ -3,16 +3,14 @@ from django.contrib.auth.models import User  # used for registering username and
 from django.forms.widgets import PasswordInput, TextInput, EmailInput  # used for password and text input based on imported form
 from django import forms 
 
-#Register or Create a user
-class CustomUserCreationForm(UserCreationForm):
 
+class CustomUserCreationForm(UserCreationForm):     #Register or Create a user
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
 
-#Login a user
-class LoginForm(AuthenticationForm): #including authentication in the form
+class LoginForm(AuthenticationForm):    #Login a user ,   including authentication in the form
     username = forms.CharField(widget=TextInput)
     email = forms.CharField(widget=EmailInput)
     password = forms.CharField(widget=PasswordInput)
