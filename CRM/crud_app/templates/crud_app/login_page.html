@@ -1,12 +1,31 @@
 {% extends 'crud_app/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-<body>
-    <br/><br/>
-    <div class="text-center">
-        <h1><b>Login</b></h1>
-        <a type="button" class="btn btn-primary" href="#">Login</a><br/>
+<!--Header-->
+<header class="">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center">
+            <h1 class="display-4 fw-bolder">Login</h1>
+            <p class="lead fw-normal mb-0">Login Here</p>
+        </div>
     </div>
-</body>
+</header>
 
+<body>
+<div class="container bg-light p-5 shadow-md form-layout">
+    <div class="col-md-8 offset-md-2">
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br/>
+        <button type="submit" class="btn btn-primary w-100 btn-block p2">Login</button>
+    </form>
+    <br/>
+        <div class="text-center">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+    </div>
+</div>
+</body>  
 {% endblock %}
