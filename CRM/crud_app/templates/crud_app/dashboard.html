@@ -1,10 +1,21 @@
 {% extends 'crud_app/base.html' %}
 {% block content %}
 
+<!--Header-->
+<header class="">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center">
+            <h1 class="display-4 fw-bolder">Dashboard</h1>
+            <p class="lead fw-normal mb-0">User Details</p>
+        </div>
+    </div>
+</header>
+
+
 <body>
     <br/><br/>
-    <div class="text-center">
-        <h1><b>Dashboard</b></h1>
+    <div class="text-left">
+        <h1><b>User : </b>{{user}}</h1>
     </div>
 </body>
 

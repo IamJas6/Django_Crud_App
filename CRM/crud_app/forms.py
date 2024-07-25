@@ -11,6 +11,5 @@ class CustomUserCreationForm(UserCreationForm):     #Register or Create a user
 
 
 class LoginForm(AuthenticationForm):    #Login a user ,   including authentication in the form
-    username = forms.CharField(widget=TextInput)
-    email = forms.CharField(widget=EmailInput)
+    username = forms.CharField(widget=TextInput())
     password = forms.CharField(widget=PasswordInput)
