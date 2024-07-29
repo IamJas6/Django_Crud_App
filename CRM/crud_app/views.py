@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from . models import CreateRecord
 # Create your views here.
 
 #index page or main page
@@ -58,4 +58,6 @@ def logout(request):
 #user dashboard
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'crud_app/dashboard.html')
+    my_records = CreateRecord.objects.all()
+    context = {'my_records': my_records}
+    return render(request, 'crud_app/dashboard.html', context)
