@@ -13,4 +13,4 @@ class CreateRecord(models.Model):
     country = models.CharField(max_length=120)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.id}-{self.first_name} {self.last_name}'
