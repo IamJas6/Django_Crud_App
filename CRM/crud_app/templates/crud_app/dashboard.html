@@ -14,9 +14,8 @@
 <body>
   
   <div class="container">
-    <div class="row">
       <center>
-            <div class="col-8"><br/><br/>
+            <div class="col-md-8"><br/><br/>
               <div class="container">
                 <div align="left">
                   <a class="btn btn-outline-primary btn-sm" href="{% url 'createrecord' %}">Create Record</a>
@@ -46,6 +45,7 @@
                       <td>{{records.email}}</td>
                       <td>{{records.phone}}</td>
                       <td>{{records.date_create}}</td>
+                      <td><a href="{% url 'viewrecord' records.id %}">View</a></td>
                     </tr>
                       {% endfor %}
                   </tbody>
@@ -55,7 +55,6 @@
                 {% endif %}
               </div>
             </center>
-          </div>
       </div>
 
       <style>
