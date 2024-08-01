@@ -1,0 +1,35 @@
+{% extends 'crud_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!--Header-->
+<header class="">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center">
+            <h1 class="display-4 fw-bolder">View Record</h1>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="card w-50 text-bg-light mb-3 col-md-6 offset-md-3" style="width: 25rem;">
+        <div class="card-header fs-3 text-uppercase">
+          <strong>{{records.first_name}} {{records.last_name}}</strong>
+        </div>
+        <div class="card-body fs-5">
+          <h5 class="card-title"><b>Employee Details</b></h5></br>
+          <p class="card-text"><strong> ID : </strong>{{records.id}}</p>
+          <p class="card-text"><strong> Email : </strong>{{records.email}}</p>
+          <p class="card-text"><strong> Creation Date : </strong>{{records.date_create}}</p>
+          <p class="card-text"><strong> Address : </strong>{{records.address}}</p>
+          <p class="card-text"><strong> City : </strong>{{records.city}}</p>
+          <p class="card-text"><strong> Province : </strong>{{records.province}}</p>
+          <p class="card-text"><strong> Country : </strong>{{records.country}}</p></br>
+          
+          <a href="{% url 'dashboard' %}" class="btn btn-seondary">Back</a>
+          <a href="{% url 'updaterecord' records.id %}" class="btn btn-outline-info">Update Record</a>
+          <a href="#" class="btn btn-outline-danger">Delete</a>
+        </div>
+      </div>
+</body>  
+{% endblock %}
