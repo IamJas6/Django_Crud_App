@@ -75,3 +75,28 @@ def createrecord(request):
             return redirect('dashboard')
     context = {'form':form}
     return render(request, 'crud_app/create_record.html', context)
+
+
+
+#Update a record
+@login_required(login_url='login')
+def updaterecord(request, pk):
+    record = CreateRecord.objects.get(id=pk)
+    form = UpdateRecordForm(instance=record)
+    if request.method == 'POST':
+        form = UpdateRecordForm(request.POST, instance=record)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Updated Successfully!')
+            return redirect('dashboard')
+    context = {'form':form}
+    return render(request, 'crud_app/update_record.html', context)
+
+
+
+#View individual records
+@login_required(login_url='login')
+def viewrecord(request, pk):
+    all_records = CreateRecord.objects.get(id=pk)
+    context = {'records': all_records}
+    return render(request, 'crud_app/view_record.html', context)
