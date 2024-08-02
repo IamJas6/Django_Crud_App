@@ -39,7 +39,7 @@ def login(request):
                 messages.success(request, 'You Are Now Logged In Successfully!')
                 return redirect('dashboard')
             else:
-                messages.info(request, 'Username or Password is incorrect')
+                messages.error(request, 'Invalid username or password. Please try again.')
                 return redirect('login')
         else:
             messages.info(request, 'Username not registered, Register Now!')
@@ -51,9 +51,11 @@ def login(request):
 #Logout user
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'You havve been logged out!')
+    messages.info(request, 'You have been logged out!')
     return redirect('/')
 
+
+# --> C R U D <--- #
 
 #user dashboard
 @login_required(login_url='login')
@@ -72,6 +74,7 @@ def createrecord(request):
         form = CreateRecordForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Record Created!')
             return redirect('dashboard')
     context = {'form':form}
     return render(request, 'crud_app/create_record.html', context)
@@ -100,3 +103,12 @@ def viewrecord(request, pk):
     all_records = CreateRecord.objects.get(id=pk)
     context = {'records': all_records}
     return render(request, 'crud_app/view_record.html', context)
+
+
+#delete a records
+@login_required(login_url='login')
+def deleterecord(request, pk):
+    record = CreateRecord.objects.get(id=pk)
+    record.delete()
+    messages.error(request, 'Record Deleted')
+    return redirect('dashboard')
