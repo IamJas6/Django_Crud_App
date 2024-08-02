@@ -28,7 +28,7 @@
           
           <a href="{% url 'dashboard' %}" class="btn btn-seondary">Back</a>
           <a href="{% url 'updaterecord' records.id %}" class="btn btn-outline-info">Update Record</a>
-          <a href="#" class="btn btn-outline-danger">Delete</a>
+          <a href="{% url 'deleterecord' records.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
       </div>
 </body>  
