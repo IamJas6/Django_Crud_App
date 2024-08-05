@@ -14,7 +14,7 @@
 <body>
     <div class="card w-50 text-bg-light mb-3 col-md-6 offset-md-3" style="width: 25rem;">
         <div class="card-header fs-3 text-uppercase">
-          <strong>{{records.first_name}} {{records.last_name}}</strong>
+          <strong><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;{{records.first_name}} {{records.last_name}}</strong>
         </div>
         <div class="card-body fs-5">
           <h5 class="card-title"><b>Employee Details</b></h5></br>
@@ -26,9 +26,9 @@
           <p class="card-text"><strong> Province : </strong>{{records.province}}</p>
           <p class="card-text"><strong> Country : </strong>{{records.country}}</p></br>
           
-          <a href="{% url 'dashboard' %}" class="btn btn-seondary">Back</a>
-          <a href="{% url 'updaterecord' records.id %}" class="btn btn-outline-info">Update Record</a>
-          <a href="{% url 'deleterecord' records.id %}" class="btn btn-outline-danger">Delete</a>
+          <a href="{% url 'dashboard' %}" class="btn btn-seondary"><i class="fa fa-reply" aria-hidden="true"></i>&nbsp;Back</a>
+          <a href="{% url 'updaterecord' records.id %}" class="btn btn-outline-info"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Update Record</a>
+          <a href="{% url 'deleterecord' records.id %}" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</a>
         </div>
       </div>
 </body>  

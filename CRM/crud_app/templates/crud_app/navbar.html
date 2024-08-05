@@ -7,14 +7,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;About</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Services
+              <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Services
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">S1</a></li>
@@ -23,23 +23,23 @@
           </li>
           {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                <a class="nav-link" href="{% url 'dashboard' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Dashboard</i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{% url 'logout' %}">LogOut</a>
+                <a class="nav-link " href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>LogOut</a>
             </li>
           {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{% url 'register' %}">Register</a>
+                <a class="nav-link " href="{% url 'register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;Register</a>
             </li>
           {% endif %}
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-info" type="submit">Search</button>
+          <button class="btn btn-outline-info d-flex align-items-center" type="submit">Search<i class="fa fa-search ms-2" aria-hidden="true"></i>&nbsp;</button>
         </form>
       </div>
     </div>

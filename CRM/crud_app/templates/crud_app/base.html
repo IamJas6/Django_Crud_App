@@ -8,6 +8,7 @@
         <title>CRM</title>
         <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <!--create navbar here-->
@@ -15,14 +16,29 @@
 
         <div class="container"><br/>
             <!--notification messages-->
+            {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p id="message-timer" class="alert alert-success float-center alert-dismissible text-center message-text">
+                <i class="fa fa-check" aria-hidden="true"></i>&nbsp; {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </p>
+            {% else %}
+            <p id="message-timers" class="alert alert-danger float-center alert-dismissible text-center message-text">
+                <i class="fa fa-check" aria-hidden="true"></i>&nbsp; {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </p>
+            {% endif %}
+            {% endfor %}
+
+            <!--
             {% if messages %}
             {% for message in messages %}
-            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show">
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} float-center text-center alert-dismissible fade show">
                 {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             {% endfor %}
-            {% endif %}
+            {% endif %} -->
 
             {% block content %}
             <!-- Your content goes here -->

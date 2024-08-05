@@ -113,6 +113,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+TIME_ZONE = 'Asia/Kolkata'  # Set to your local timezone
+
 USE_TZ = True
 
 

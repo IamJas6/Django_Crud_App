@@ -17,9 +17,11 @@
     <div class="col-md-8 offset-md-2">
     <form method="POST" autocomplete="off">
         {% csrf_token %}
-        {{form|crispy}}
+        {{form.username|as_crispy_field}}
         <br/>
-        <button type="submit" class="btn btn-primary w-100 btn-block p2">Login</button>
+        {{form.password|as_crispy_field}}
+        <br/>
+        <button type="submit" class="btn btn-primary w-100 btn-block p2"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</button>
     </form>
     <br/>
         <div class="text-center">
