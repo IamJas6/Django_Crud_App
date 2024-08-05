@@ -11,7 +11,6 @@ This Django CRM Application is designed to manage customer relationships efficie
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Basic Setup
 
@@ -176,7 +175,7 @@ project_name/
 <!-- Add screenshots here -->
 
 <img src="Screenshot 2024-08-05 151109.png"></img>
-![Create Record](path/to/create_record.png)
+<img src="Screenshot 2024-08-05 152253.png"></img>
 
 ## Contributing
 1. Fork the repository.
